@@ -17,7 +17,18 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre></pre>
+        <pre><!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 404 (Page not found)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  </style>
+  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+  <p><b>404.</b> <ins>That’s an error.</ins>
+  <p>The requested URL was not found on this server.  <ins>That’s all we know.</ins>
+</pre>
       </div>
     </td>
   </tr>
@@ -30,7 +41,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre><span class="kd">var</span> <span class="nx">customMatchers</span> <span class="o">=</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -45,7 +56,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">toBeGoofy</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">util</span><span class="p">,</span> <span class="nx">customEqualityTesters</span><span class="p">)</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -58,7 +69,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="k">return</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -73,7 +84,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="nx">compare</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">)</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -86,9 +97,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="k">if</span> <span class="p">(</span><span class="nx">expected</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">expected</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-        <span class="p">}</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -103,7 +112,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{};</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -116,7 +125,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="nx">result</span><span class="p">.</span><span class="nx">pass</span> <span class="o">=</span> <span class="nx">util</span><span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="nx">actual</span><span class="p">.</span><span class="nx">hyuk</span><span class="p">,</span> <span class="s2">&quot;gawrsh&quot;</span> <span class="o">+</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">customEqualityTesters</span><span class="p">);</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -131,7 +140,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">pass</span><span class="p">)</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -144,8 +153,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>          <span class="nx">result</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Expected &quot;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s2">&quot; not to be quite so goofy&quot;</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -158,8 +166,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>          <span class="nx">result</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Expected &quot;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="s2">&quot; to be goofy, but it was not very goofy&quot;</span><span class="p">;</span>
-        <span class="p">}</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -172,11 +179,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-<span class="p">};</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -204,7 +207,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Custom matcher: &#39;toBeGoofy&#39;&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -217,9 +220,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">jasmine</span><span class="p">.</span><span class="nx">addMatchers</span><span class="p">(</span><span class="nx">customMatchers</span><span class="p">);</span>
-  <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -233,24 +234,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;is available on an expectation&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">({</span>
-      <span class="nx">hyuk</span><span class="o">:</span> <span class="s1">&#39;gawrsh&#39;</span>
-    <span class="p">}).</span><span class="nx">toBeGoofy</span><span class="p">();</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;can take an &#39;expected&#39; parameter&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">({</span>
-      <span class="nx">hyuk</span><span class="o">:</span> <span class="s1">&#39;gawrsh is fun&#39;</span>
-    <span class="p">}).</span><span class="nx">toBeGoofy</span><span class="p">(</span><span class="s1">&#39; is fun&#39;</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;can be negated&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">({</span>
-      <span class="nx">hyuk</span><span class="o">:</span> <span class="s1">&#39;this is fun&#39;</span>
-    <span class="p">}).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeGoofy</span><span class="p">();</span>
-  <span class="p">});</span>
-<span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>

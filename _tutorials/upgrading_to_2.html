@@ -15,7 +15,18 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Upgrading to jasmine 2.0&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre><!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 404 (Page not found)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  </style>
+  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+  <p><b>404.</b> <ins>That’s an error.</ins>
+  <p>The requested URL was not found on this server.  <ins>That’s all we know.</ins>
+</pre>
       </div>
     </td>
   </tr>
@@ -28,8 +39,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Custom Matchers&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -42,10 +52,7 @@ order:
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="cm">/* was:</span>
-<span class="cm">         this.addMatchers({</span>
-<span class="cm">      */</span>
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">addMatchers</span><span class="p">({</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -61,14 +68,7 @@ instead of the actual value being on <code>this</code></p>
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="cm">/* was:</span>
-<span class="cm">           toBeCustom: function(expected) {</span>
-<span class="cm">             var passed = this.actual == expected;</span>
-<span class="cm">        */</span>
-        <span class="nx">toBeCustom</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">util</span><span class="p">,</span> <span class="nx">customEqualityTesters</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="p">{</span>
-            <span class="nx">compare</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">)</span> <span class="p">{</span>
-              <span class="kd">var</span> <span class="nx">passed</span> <span class="o">=</span> <span class="nx">actual</span> <span class="o">==</span> <span class="nx">expected</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -84,25 +84,7 @@ This page is intended to show the changes necessary to upgrade a 1.x suite to 2.
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>              <span class="cm">/* was:</span>
-<span class="cm">                this.message = function() {</span>
-<span class="cm">                  return [</span>
-<span class="cm">                    &#39;Expected &#39; + this.actual + &#39; to equal &#39; + expected,</span>
-<span class="cm">                    &#39;Expected &#39; + this.actual + &#39; not to equal &#39; + expected</span>
-<span class="cm">                  ];</span>
-<span class="cm">                };</span>
-<span class="cm">                return passed;</span>
-<span class="cm">                });</span>
-<span class="cm">                */</span>
-              <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">pass</span><span class="o">:</span> <span class="nx">passed</span><span class="p">,</span>
-                <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Expected &#39;</span> <span class="o">+</span> <span class="nx">actual</span> <span class="o">+</span> <span class="p">(</span><span class="nx">passed</span> <span class="o">?</span> <span class="s1">&#39;&#39;</span> <span class="o">:</span> <span class="s1">&#39; not&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; to equal &#39;</span> <span class="o">+</span> <span class="nx">expected</span>
-              <span class="p">};</span>
-            <span class="p">}</span>
-          <span class="p">};</span>
-        <span class="p">}</span>
-      <span class="p">});</span>
-    <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -115,10 +97,7 @@ This page is intended to show the changes necessary to upgrade a 1.x suite to 2.
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;uses custom matchers&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toBeCustom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -131,7 +110,7 @@ This page is intended to show the changes necessary to upgrade a 1.x suite to 2.
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Asynchronous Specs&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -144,11 +123,7 @@ This page is intended to show the changes necessary to upgrade a 1.x suite to 2.
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="kd">var</span> <span class="nx">asyncSetThing</span><span class="p">,</span>
-    <span class="nx">somethingAsyncWithCallback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">asyncSetThing</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="nx">callback</span><span class="p">();</span>
-    <span class="p">};</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -162,12 +137,7 @@ run as part of the spec to receive and invoke a <code>done</code> callback.</p>
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="cm">/* was:</span>
-<span class="cm">       it(&quot;calls an async thing and waits&quot;, function() {</span>
-<span class="cm">         var asyncDone = false;</span>
-<span class="cm">         somethingAsyncWithCallback(function() {</span>
-<span class="cm">           asyncDone = true</span>
-<span class="cm">         });</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -180,10 +150,7 @@ run as part of the spec to receive and invoke a <code>done</code> callback.</p>
     </td>
     <td class="code">
       <div class="highlight">
-        <pre><span class="cm">         waitsFor(function() {</span>
-<span class="cm">           return asyncDone;</span>
-<span class="cm">         });</span>
-<span class="cm">     */</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -198,20 +165,7 @@ jasmines <code>done</code> can just be passed through and jasmine will wait appr
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">somethingAsyncWithCallback</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="cm">/*</span>
-<span class="cm">       runs(function() {</span>
-<span class="cm">         expect(asyncSetThing).toBeTruthy();</span>
-<span class="cm">       });</span>
-<span class="cm">     });</span>
-<span class="cm">     */</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;will wait until async completes and calls done&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">asyncSetThing</span><span class="p">).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
-    <span class="p">});</span>
-  <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -224,9 +178,7 @@ jasmines <code>done</code> can just be passed through and jasmine will wait appr
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Spies&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should spy&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">spy</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpy</span><span class="p">(</span><span class="s1">&#39;spy&#39;</span><span class="p">);</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -240,16 +192,7 @@ There is a single <code>and</code> attribute that has all of the spy behaviors o
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>       <span class="cm">/* was:</span>
-<span class="cm">        spy.andCallThrough();</span>
-<span class="cm">        spy.andCallFake(function() {});</span>
-<span class="cm">        spy.andThrow(&#39;error&#39;);</span>
-<span class="cm">        spy.andReturn(1);</span>
-<span class="cm">        */</span>
-      <span class="nx">spy</span><span class="p">.</span><span class="nx">and</span><span class="p">.</span><span class="nx">callThrough</span><span class="p">();</span>
-      <span class="nx">spy</span><span class="p">.</span><span class="nx">and</span><span class="p">.</span><span class="nx">callFake</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{});</span>
-      <span class="nx">spy</span><span class="p">.</span><span class="nx">and</span><span class="p">.</span><span class="nx">throwError</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">);</span>
-      <span class="nx">spy</span><span class="p">.</span><span class="nx">and</span><span class="p">.</span><span class="nx">returnValue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -262,10 +205,7 @@ There is a single <code>and</code> attribute that has all of the spy behaviors o
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="nx">spy</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
-      <span class="nx">spy</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">);</span>
-
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">spy</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -278,14 +218,7 @@ There is a single <code>and</code> attribute that has all of the spy behaviors o
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="cm">/* was:</span>
-<span class="cm">         expect(spy.mostRecentCall.args).toEqual([&#39;bar&#39;]);</span>
-<span class="cm">         expect(spy.callCount).toBe(2);</span>
-<span class="cm">       */</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">spy</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">mostRecent</span><span class="p">().</span><span class="nx">args</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">([</span><span class="s1">&#39;bar&#39;</span><span class="p">]);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">spy</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">count</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -298,7 +231,7 @@ There is a single <code>and</code> attribute that has all of the spy behaviors o
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Clock&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -312,12 +245,7 @@ and it is now <code>install</code>ed instead of being told to <code>useMock</cod
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="cm">/* was:</span>
-<span class="cm">       jasmine.Clock.useMock();</span>
-<span class="cm">     */</span>
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">clock</span><span class="p">().</span><span class="nx">install</span><span class="p">();</span>
-    <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -330,12 +258,7 @@ and it is now <code>install</code>ed instead of being told to <code>useMock</cod
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;uses the clock similarly&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="cm">/* was:</span>
-<span class="cm">         jasmine.Clock.tick();</span>
-<span class="cm">       */</span>
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">clock</span><span class="p">().</span><span class="nx">tick</span><span class="p">();</span>
-    <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -350,11 +273,7 @@ In order to keep the clock from being a special object that is able to uninstall
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">clock</span><span class="p">().</span><span class="nx">uninstall</span><span class="p">();</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>

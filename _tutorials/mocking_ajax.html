@@ -18,7 +18,18 @@ To use it, you need to download the <code>mock-ajax.js</code> file and add it to
     </td>
     <td class="code">
       <div class="highlight">
-        <pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;mocking ajax&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre><!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 404 (Page not found)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  </style>
+  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+  <p><b>404.</b> <ins>That’s an error.</ins>
+  <p>The requested URL was not found on this server.  <ins>That’s all we know.</ins>
+</pre>
       </div>
     </td>
   </tr>
@@ -31,7 +42,7 @@ To use it, you need to download the <code>mock-ajax.js</code> file and add it to
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;suite wide usage&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -44,9 +55,7 @@ To use it, you need to download the <code>mock-ajax.js</code> file and add it to
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">install</span><span class="p">();</span>
-    <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -59,12 +68,7 @@ To use it, you need to download the <code>mock-ajax.js</code> file and add it to
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">uninstall</span><span class="p">();</span>
-    <span class="p">});</span>
-
-    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;specifying response when you need it&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">doneFn</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpy</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">);</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -78,15 +82,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">doneFn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
-
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/some/cool/url&quot;</span><span class="p">);</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -99,8 +95,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="nx">expect</span><span class="p">(</span><span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">requests</span><span class="p">.</span><span class="nx">mostRecent</span><span class="p">().</span><span class="nx">url</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;/some/cool/url&#39;</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">doneFn</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -113,7 +108,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">requests</span><span class="p">.</span><span class="nx">mostRecent</span><span class="p">().</span><span class="nx">respondWith</span><span class="p">({</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -126,7 +121,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -139,7 +134,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="s2">&quot;contentType&quot;</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -152,8 +147,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>        <span class="s2">&quot;responseText&quot;</span><span class="o">:</span> <span class="s1">&#39;awesome response&#39;</span>
-      <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -166,8 +160,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="nx">expect</span><span class="p">(</span><span class="nx">doneFn</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="s1">&#39;awesome response&#39;</span><span class="p">);</span>
-    <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -180,8 +173,7 @@ Jasmine-Ajax mocks out your request at the XMLHttpRequest object, so should be c
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;allows responses to be setup ahead of time&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">doneFn</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpy</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">);</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -195,9 +187,7 @@ Then <code>andReturn</code> receives the same type of argument as <code>respondW
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">stubRequest</span><span class="p">(</span><span class="s1">&#39;/another/url&#39;</span><span class="p">).</span><span class="nx">andReturn</span><span class="p">({</span>
-        <span class="s2">&quot;responseText&quot;</span><span class="o">:</span> <span class="s1">&#39;immediate response&#39;</span>
-      <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -210,19 +200,7 @@ Then <code>andReturn</code> receives the same type of argument as <code>respondW
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>      <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">doneFn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
-
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/another/url&quot;</span><span class="p">);</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
-
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">doneFn</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="s1">&#39;immediate response&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
@@ -237,30 +215,7 @@ Then <code>andReturn</code> receives the same type of argument as <code>respondW
     </td>
     <td class="code">
       <div class="highlight">
-        <pre>  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;allows use in a single spec&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">doneFn</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpy</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">);</span>
-    <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">withMock</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">doneFn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
-
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/some/cool/url&quot;</span><span class="p">);</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
-
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">doneFn</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
-
-      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">requests</span><span class="p">.</span><span class="nx">mostRecent</span><span class="p">().</span><span class="nx">respondWith</span><span class="p">({</span>
-        <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="s2">&quot;responseText&quot;</span><span class="o">:</span> <span class="s1">&#39;in spec response&#39;</span>
-      <span class="p">});</span>
-
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">doneFn</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="s1">&#39;in spec response&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">});</span></pre>
+        <pre></pre>
       </div>
     </td>
   </tr>
