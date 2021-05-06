@@ -1,0 +1,65 @@
+---
+question: Which async style should I prefer, and why?
+---
+
+We've found that most developers have a much easier time writing error-free
+specs in the `async`/`await` style, so we recommend that style in most cases.
+Promise-returning specs are a bit harder to write, but they can be useful in
+more complex scenarios or when running specs in browsers that don't support
+`async`/`await`. Callback style specs are very error-prone and should be avoided
+if possible.
+
+There are two major drawbacks to callback style specs. The first is that the
+flow of execution is harder to visualize. That makes it easy to write a spec
+that calls its `done` callback before it's actually finished. The second is
+that it's difficult to handle errors correctly. Consider this spec:
+
+```
+it('sometimes fails to finish', function(done) {
+  doSomethingAsync(function(result) {
+    expect(result.things.length).toEqual(2);
+    done();
+  });
+});
+```
+
+If `result.things` is undefined, the access to `result.things.length` will throw
+an error, preventing `done` from being called. The spec will eventually time out
+but only after a significant delay. The error will be reported, but because of
+the way browsers and Node expose information about unhandled exceptions, it 
+won't include a stack trace or any other information that indicates the source
+of the error.
+
+Fixing this requires wrapping each callback in a try-catch:
+
+```
+it('finishes and reports errors reliably', function(done) {
+  doSomethingAsync(function(result) {
+    try {
+      expect(result.things.length).toEqual(2);
+    } catch (err) {
+      done.fail(err);
+      return;
+    }
+
+    done();
+  });
+});
+```
+
+That's tedious, error-prone, and likely to be forgotten. It's often better to
+convert the callback to a promise:
+
+```
+it('finishes and reports errors reliably', async function() {
+  const result = await new Promise(function(resolve, reject) {
+    doSomethingAsync(resolve);
+  });
+
+  expect(result.things.length).toEqual(2);
+});
+```
+
+TODO finish this
+* Use for callback-based APIs
+* But consider promisifying

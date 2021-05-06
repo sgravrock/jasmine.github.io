@@ -4,6 +4,7 @@ https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
   	* Why not to rely on this
 Why does Jasmine allow multiple assertion failures? How can I turn that off?
 https://github.com/jasmine/jasmine/issues/666 (re-running env)
+"this" and arrow functions
 
 async:
 https://github.com/jasmine/jasmine/issues/1774
@@ -12,6 +13,7 @@ Why are errors sometimes associated with the suite or "wrong" spec?
 How do I test e.g. UI that awaits?
 Why can't I mix promises and callbacks?
 Which async style should I prefer? Why?
+Something about putting assertions in a callback
 
 spies:
 https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
