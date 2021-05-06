@@ -1,0 +1,46 @@
+https://github.com/jasmine/jasmine/issues/1773
+https://github.com/jasmine/jasmine/issues/1451
+https://github.com/jasmine/jasmine/issues/1774
+https://github.com/jasmine/jasmine/issues/1734
+https://github.com/jasmine/jasmine/issues/1731
+https://github.com/jasmine/jasmine/issues/1648
+https://github.com/jasmine/jasmine/issues/1617
+https://github.com/jasmine/jasmine-py/issues/52
+https://github.com/jasmine/jasmine/issues/1467
+https://github.com/jasmine/jasmine/issues/1853
+https://github.com/jasmine/jasmine-npm/issues/81
+https://github.com/jasmine/jasmine/issues/559
+https://github.com/gburghardt/jasmine-data_driven_tests
+https://github.com/jasmine/jasmine/issues/666
+http://web.archive.org/web/20131225024548/http://pivotallabs.com/jasmine-2-release/
+https://github.com/jasmine/jasmine/issues/153
+https://github.com/jasmine/jasmine/issues/526
+https://github.com/jasmine/jasmine/issues/781 (me!)
+https://github.com/cedarbdd/cedar/issues/406 (don't mock what you don't own)
+https://github.com/jasmine/jasmine/issues/1590
+
+Ember browser support policy:
+https://github.com/emberjs/rfcs/pull/685/files
+
+Why does Jasmine allow multiple assertion failures? How can I turn that off?
+How can I get Jasmine to fail tests with no assertions?
+	* Why not to rely on this
+
+Typescript?
+	* compile & emit stratetgy (src/jasmine/typescript/standalone-ts)
+	* babel & then type-check strategy (jasmine-browser)
+	* React approach already documented
+
+IE:
+	* Why won't my code work in IE? How do I fix it?
+	* Why do I have to deal with this?
+		* Market share
+		* https://github.com/angular/angular/issues/41840
+		* https://github.com/mui-org/material-ui/issues/14420
+		* Babel
+	* How do I test functionality that depends on optional browser features?
+
+Questions we wish were frequently asked:
+	* How can I get a quicker response to my issue?
+	* How can I get a quicker response to my PR?
+	* How does Jasmine use Jasmine to test Jasmine?
