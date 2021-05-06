@@ -1,40 +1,49 @@
+General testing:
+https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
+  How can I get Jasmine to fail tests with no assertions?
+  	* Why not to rely on this
+Why does Jasmine allow multiple assertion failures? How can I turn that off?
+https://github.com/jasmine/jasmine/issues/666 (re-running env)
+
 async:
-https://github.com/jasmine/jasmine/issues/1773
 https://github.com/jasmine/jasmine/issues/1774
+Why are errors sometimes associated with the suite or "wrong" spec?
+  https://github.com/jasmine/jasmine/issues/781 (late async errors. me!)
+How do I test e.g. UI that awaits?
+Why can't I mix promises and callbacks?
+Which async style should I prefer? Why?
+
+spies:
+https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
+module mocking
+
 
 async describe:
 https://github.com/jasmine/jasmine/issues/1734
+https://github.com/jasmine/jasmine/issues/1853
+https://github.com/jasmine/jasmine/issues/559
 
 mixed async styles:
 https://github.com/jasmine/jasmine/issues/1731
 
-
 test setup:
 https://github.com/jasmine/jasmine/issues/1451
 
-uncategorized:
-https://github.com/jasmine/jasmine/issues/1648
+versioning:
 https://github.com/jasmine/jasmine/issues/1617
-https://github.com/jasmine/jasmine-py/issues/52
-https://github.com/jasmine/jasmine/issues/1467
-https://github.com/jasmine/jasmine/issues/1853
-https://github.com/jasmine/jasmine-npm/issues/81
-https://github.com/jasmine/jasmine/issues/559
+https://github.com/jasmine/jasmine-npm/issues/81 (why tie -npm to core)
+
+misc:
+http://web.archive.org/web/20131225024548/http://pivotallabs.com/jasmine-2-release/ (why is Jasmine called Jasmine)
+
+
+uncategorized:
 https://github.com/gburghardt/jasmine-data_driven_tests
-https://github.com/jasmine/jasmine/issues/666
-http://web.archive.org/web/20131225024548/http://pivotallabs.com/jasmine-2-release/
-https://github.com/jasmine/jasmine/issues/153
-https://github.com/jasmine/jasmine/issues/526
-https://github.com/jasmine/jasmine/issues/781 (me!)
 https://github.com/cedarbdd/cedar/issues/406 (don't mock what you don't own)
-https://github.com/jasmine/jasmine/issues/1590
 
 Ember browser support policy:
 https://github.com/emberjs/rfcs/pull/685/files
 
-Why does Jasmine allow multiple assertion failures? How can I turn that off?
-How can I get Jasmine to fail tests with no assertions?
-	* Why not to rely on this
 
 Typescript?
 	* compile & emit stratetgy (src/jasmine/typescript/standalone-ts)
@@ -54,3 +63,12 @@ Questions we wish were frequently asked:
 	* How can I get a quicker response to my issue?
 	* How can I get a quicker response to my PR?
 	* How does Jasmine use Jasmine to test Jasmine?
+
+
+Maybe skip:
+https://github.com/jasmine/jasmine-py/issues/52 (why isn't Python 2.x supported)
+https://github.com/jasmine/jasmine/issues/153
+https://github.com/jasmine/jasmine/issues/526
+
+Done:
+https://github.com/jasmine/jasmine/issues/1648 (spy returning rejected promise: async/return-reject.md)
