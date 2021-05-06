@@ -34,9 +34,10 @@ Failures:
 
 There are three ways to make the output of a spec like that more clear:
 
-* Put each expectation in its own spec. (This isn't always a good idea.)
-* Write a [custom matcher](/tutorials/custom_matcher). (This isn't always
-  worth the effort.)
+* Put each expectation in its own spec. (This is sometimes a good idea, but not
+  always.)
+* Write a [custom matcher](/tutorials/custom_matcher). (This is sometimes worth
+  the effort, but not always.)
 * Use [withContext](/api/edge/matchers.html#withContext) to add extra text to
   the matcher failure messages.
 

@@ -1,8 +1,18 @@
+async:
 https://github.com/jasmine/jasmine/issues/1773
-https://github.com/jasmine/jasmine/issues/1451
 https://github.com/jasmine/jasmine/issues/1774
+
+async describe:
 https://github.com/jasmine/jasmine/issues/1734
+
+mixed async styles:
 https://github.com/jasmine/jasmine/issues/1731
+
+
+test setup:
+https://github.com/jasmine/jasmine/issues/1451
+
+uncategorized:
 https://github.com/jasmine/jasmine/issues/1648
 https://github.com/jasmine/jasmine/issues/1617
 https://github.com/jasmine/jasmine-py/issues/52
