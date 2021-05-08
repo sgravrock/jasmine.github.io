@@ -66,6 +66,9 @@ Questions we wish were frequently asked:
 	* How can I get a quicker response to my PR?
 	* How does Jasmine use Jasmine to test Jasmine?
 
+* Why ES5?
+* Why not TypeScript?
+
 
 Maybe skip:
 https://github.com/jasmine/jasmine-py/issues/52 (why isn't Python 2.x supported)
