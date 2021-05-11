@@ -4,7 +4,9 @@
 
   p {
     width: 100%;
-    margin: 5px 0;
+    // TODO: This looks good in FAQs but bad in tutorials, because the latter's
+    // margins don't collapse. Figure out why.
+    margin: 1em 0;
   }
 
   ol, ul {
