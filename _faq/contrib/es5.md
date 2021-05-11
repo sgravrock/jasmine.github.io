@@ -1,6 +1,16 @@
 ---
-question: Why is Jasmine written in ES5? Why not use Babel or TypeScript?
+question: Why is Jasmine written in ES5 with a funny hand-rolled module system? Why not use Babel or TypeScript?
 ---
+
+Partly because Jasmine is much older than most of those technologies. Webpack
+was first released six years after development of Jasmine started. So was
+Babel's predecessor 6to5. 
+Jasmine
+predates all of the standardized JavaScript module systems. Its development
+started six years before the first releases of Webpack and Babel's predecessor 
+6to5. 
+
+TODO rewrite below here
 
 Jasmine needs to run on browsers that don't support newer JavaScript features.
 Currently that means that the compiled code can't rely on a variety of newer
