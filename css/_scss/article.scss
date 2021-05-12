@@ -2,10 +2,14 @@
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 1.2em;
 
+  &.main-content {
+    // Override display:flex that prevents margins on children from collapsing.
+    // TODO there might be a better way to do this.
+    display: block;
+  }
+
   p {
     width: 100%;
-    // TODO: This looks good in FAQs but bad in tutorials, because the latter's
-    // margins don't collapse. Figure out why.
     margin: 1em 0;
   }
 
