@@ -14,7 +14,7 @@ flow of execution is harder to visualize. That makes it easy to write a spec
 that calls its `done` callback before it's actually finished. The second is
 that it's difficult to handle errors correctly. Consider this spec:
 
-```
+```javascript
 it('sometimes fails to finish', function(done) {
   doSomethingAsync(function(result) {
     expect(result.things.length).toEqual(2);
@@ -32,7 +32,7 @@ of the error.
 
 Fixing this requires wrapping each callback in a try-catch:
 
-```
+```javascript
 it('finishes and reports errors reliably', function(done) {
   doSomethingAsync(function(result) {
     try {
@@ -50,7 +50,7 @@ it('finishes and reports errors reliably', function(done) {
 That's tedious, error-prone, and likely to be forgotten. It's often better to
 convert the callback to a promise:
 
-```
+```javascript
 it('finishes and reports errors reliably', async function() {
   const result = await new Promise(function(resolve, reject) {
     doSomethingAsync(resolve);
@@ -60,6 +60,7 @@ it('finishes and reports errors reliably', async function() {
 });
 ```
 
-TODO finish this
-* Use for callback-based APIs
-* But consider promisifying
+Callback-style specs are still useful for testing some callback-based interfaces
+that are difficult to promisify, and for older browsers that don't provide
+`Promise`. But in most cases it's easier to write a reliable spec using
+`async`/`await` or at least promises.
