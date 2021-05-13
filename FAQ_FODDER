@@ -14,7 +14,7 @@ How do I test e.g. UI that awaits?
 Why can't I mix promises and callbacks?
   https://github.com/jasmine/jasmine/issues/1731
 DONE: Which async style should I prefer? Why?
-Something about putting assertions in a callback
+DONE: Something about putting assertions in a callback
 
 spies:
 DONE: https://github.com/jasmine/jasmine/issues/1590, https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
