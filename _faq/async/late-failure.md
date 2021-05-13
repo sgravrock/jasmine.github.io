@@ -13,6 +13,7 @@ This becomes a problem when a spec signals completion before it's actually done.
 Consider these two examples:
 
 ```javascript
+// WARNING: does not work correctly
 it('tries to be both sync and async', function() {
   // 1. doSomethingAsync() is called 
   doSomethingAsync()
@@ -23,6 +24,7 @@ it('tries to be both sync and async', function() {
   // 2. Spec returns, which tells Jasmine that it's done
 });
 
+// WARNING: does not work correctly
 it('is async but signals completion too early', function(done) {
   // 1. doSomethingAsync() is called 
   doSomethingAsync()

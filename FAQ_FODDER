@@ -12,11 +12,12 @@ DONE: Why are errors sometimes associated with the suite or "wrong" spec?
   https://github.com/jasmine/jasmine/issues/781 (late async errors. me!)
 How do I test e.g. UI that awaits?
 Why can't I mix promises and callbacks?
+  https://github.com/jasmine/jasmine/issues/1731
 DONE: Which async style should I prefer? Why?
 Something about putting assertions in a callback
 
 spies:
-https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
+DONE: https://github.com/jasmine/jasmine/issues/1590, https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
 module mocking
 
 
@@ -25,8 +26,6 @@ https://github.com/jasmine/jasmine/issues/1734
 https://github.com/jasmine/jasmine/issues/1853
 https://github.com/jasmine/jasmine/issues/559
 
-mixed async styles:
-https://github.com/jasmine/jasmine/issues/1731
 
 test setup:
 https://github.com/jasmine/jasmine/issues/1451
