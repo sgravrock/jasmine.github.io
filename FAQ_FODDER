@@ -5,6 +5,9 @@ https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
 Why does Jasmine allow multiple assertion failures? How can I turn that off?
 https://github.com/jasmine/jasmine/issues/666 (re-running env)
 "this" and arrow functions
+What kinds of testing is Jasmine suited to? Not suited to?
+Why can't I treat a describe as an ordered sequence of steps?
+  https://github.com/jasmine/jasmine-npm/issues/178
 
 async:
 https://github.com/jasmine/jasmine/issues/1774
@@ -28,7 +31,8 @@ https://github.com/jasmine/jasmine/issues/559
 
 
 test setup:
-https://github.com/jasmine/jasmine/issues/1451
+DONE: let blocks https://github.com/jasmine/jasmine/issues/1451
+How to think about factoring out test setup
 
 versioning:
 https://github.com/jasmine/jasmine/issues/1617
