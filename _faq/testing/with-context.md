@@ -5,7 +5,7 @@ question: How can I add more information to matcher failure messages?
 When a spec has multiple, similar expectations, it can be hard to tell which
 failure corresponds to which expectation:
 
-```
+```javascript
 it('has multiple expectations', function() {
   expect(munge()).toEqual(1);
   expect(spindle()).toEqual(2);
@@ -43,7 +43,7 @@ There are three ways to make the output of a spec like that more clear:
 
 Here's the same spec as above, but modified to use `withContext`:
 
-```
+```javascript
 it('has multiple expectations with some context', function() {
   expect(munge()).withContext('munge').toEqual(1);
   expect(spindle()).withContext('spindle').toEqual(2);
