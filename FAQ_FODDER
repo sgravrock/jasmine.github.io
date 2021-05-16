@@ -22,6 +22,7 @@ DONE: Something about putting assertions in a callback
 spies:
 DONE: https://github.com/jasmine/jasmine/issues/1590, https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
 module mocking
+ajax/fetch/axios/whatever
 
 
 async describe:
