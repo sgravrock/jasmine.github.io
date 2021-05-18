@@ -1,5 +1,6 @@
 ---
 question: How can I run code before a containing describe's beforeEach? Does Jasmine have an equivalent of rspec's let?
+category: testing
 ---
 
 The short answer is that you can't, and you should refactor your test setup so

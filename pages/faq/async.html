@@ -1,0 +1,16 @@
+---
+layout: article
+title: Frequently Asked Questions: Async Testing
+---
+
+<h1>Frequently Asked Questions: Async Testing</h2>
+
+<a href="./">Back to FAQ index</a>
+
+{% for faq in site.faq %}
+  {% if faq.category == 'async' %}
+    <a id="{{ faq.title | slugify }}"></a>
+    <h2>{{ faq.question }}</h2>
+    <div class="answer">{{ faq.content }}</div>
+  {% endif %}
+{% endfor %}

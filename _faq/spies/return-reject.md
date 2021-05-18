@@ -1,5 +1,6 @@
 ---
 question: How can I configure a spy to return a rejected promise without triggering an unhandled promise rejection error?
+category: spies
 ---
 
 Simply creating a rejected promise that never gets handled is enough to trigger

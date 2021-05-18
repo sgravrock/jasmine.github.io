@@ -1,5 +1,6 @@
 ---
 question: What does Jasmine use to test itself?
+category: contributing
 ---
 
 Jasmine uses Jasmine to test Jasmine.
@@ -17,8 +18,8 @@ This has several advantages:
   first).
 * It's not possible to get stuck in a state where Jasmine's tests don't run 
   because of a newly introduced bug in Jasmine. Developers can avoid that
-  situation by not building until the specs are green, and get out of it with
-  nothing more than a `git checkout lib`.
+  situation by not building until the specs are green, and get out of it by
+  simply running `git checkout lib`.
 * Because no build step is required, it can take less than two seconds to go
   from saving a file to seeing the results of a test run.
   

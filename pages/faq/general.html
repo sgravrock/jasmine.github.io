@@ -1,0 +1,16 @@
+---
+layout: article
+title: Frequently Asked Questions: General
+---
+
+<h1>Frequently Asked Questions: General</h2>
+
+<a href="./">Back to FAQ index</a>
+
+{% for faq in site.faq %}
+  {% unless faq.category %}
+    <a id="{{ faq.title | slugify }}"></a>
+    <h2>{{ faq.question }}</h2>
+    <div class="answer">{{ faq.content }}</div>
+  {% endunless %}
+{% endfor %}
