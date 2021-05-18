@@ -135,33 +135,6 @@
     margin: 10px 0;
   }
 
-  thead tr {
-    background-color: #ddd;
-  }
-
-  td,
-  th {
-    border: 1px solid #ddd;
-    margin: 0;
-    text-align: left;
-    vertical-align: baseline;
-    padding: 4px 6px;
-    display: table-cell;
-    background-color: transparent;
-
-    code {
-      font-size: 14px;
-    }
-  }
-
-  th {
-    border-right: 1px solid #aaa;
-
-    &:last-child {
-      border-right-color: #ddd;
-    }
-  }
-
   nav {
     width: 15%;
     line-height: 1.2;

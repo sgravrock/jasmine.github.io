@@ -57,7 +57,7 @@ Typescript?
 	* React approach already documented
 
 IE:
-	* Why won't my code work in IE? How do I fix it?
+	DONE: * Why won't my code work in IE? How do I fix it?
 	* Why do I have to deal with this?
 		* Market share
 		* https://github.com/angular/angular/issues/41840
