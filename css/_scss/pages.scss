@@ -273,3 +273,12 @@ table {
     }
   }
 }
+
+// Remove borders and spacing, overriding the above, if the table is for layout.
+// TODO: This causes weird scrolling effects
+table.layout {
+  td, th { 
+    border: 0;
+    padding: 0;
+  }
+}
