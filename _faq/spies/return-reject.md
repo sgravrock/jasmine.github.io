@@ -10,7 +10,7 @@ that something went wrong, Jasmine turns them into failures.
 
 Consider this spec:
 
-```
+```javascript
 it('might cause an unhandled promise rejection', async function() {
   const foo = jasmine.createSpy('foo')
     .and.returnValue(Promise.reject(new Error('nope')));
@@ -26,7 +26,7 @@ suite or spec that is running at the time of the event.
 
 One fix is to create the rejected promise only when the spy is actually called:
 
-```
+```javascript
 it('does not cause an unhandled promise rejection', async function() {
   const foo = jasmine.createSpy('foo')
     .and.callFake(() => Promise.reject(new Error('nope')));
@@ -36,7 +36,7 @@ it('does not cause an unhandled promise rejection', async function() {
 You can automate this somewhat by using the
 [rejectWith](/api/edge/SpyStrategy.html#rejectWith) spy strategy:
 
-```
+```javascript
 it('does not cause an unhandled promise rejection', async function() {
   const foo = jasmine.createSpy('foo')
     .and.rejectWith(new Error('nope'));
