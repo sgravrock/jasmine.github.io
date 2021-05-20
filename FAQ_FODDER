@@ -1,6 +1,6 @@
 General testing:
 https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
-  How can I get Jasmine to fail tests with no assertions?
+DONE  How can I get Jasmine to fail tests with no assertions?
   	* Why not to rely on this
 Why does Jasmine allow multiple assertion failures? How can I turn that off?
 https://github.com/jasmine/jasmine/issues/666 (re-running env)
