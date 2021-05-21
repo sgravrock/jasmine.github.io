@@ -1,6 +1,5 @@
 ---
 question: I want to help out with Jasmine, where should I start?
-category: contributing
 ---
 
 Thanks for your help! The Jasmine team only has limited time to work on Jasmine so we appreciate all the help we get from the community.

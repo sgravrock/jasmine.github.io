@@ -1,6 +1,5 @@
 ---
 question: What does Jasmine use to test itself?
-category: contributing
 ---
 
 Jasmine uses Jasmine to test Jasmine.

@@ -1,6 +1,5 @@
 ---
 question: How can I add more information to matcher failure messages?
-category: testing
 ---
 
 When a spec has multiple, similar expectations, it can be hard to tell which

@@ -8,7 +8,7 @@ title: "Frequently Asked Questions: Spies"
 <a href="./">Back to FAQ index</a>
 
 {% for faq in site.faq %}
-  {% if faq.category == 'spies' %}
+  {% if faq.path contains '_faq/spies/' %}
     <a id="{{ faq.title | slugify }}"></a>
     <h2>{{ faq.question }}</h2>
     <div class="answer">{{ faq.content }}</div>

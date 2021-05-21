@@ -1,6 +1,5 @@
 ---
 question: Why are some asynchronous spec failures reported as suite errors or as failures of a different spec?
-category: async
 ---
 
 When an exception is thrown from async code, or an unhandled promise rejection

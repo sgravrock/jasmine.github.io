@@ -8,7 +8,7 @@ title: "Frequently Asked Questions: Async Testing"
 <a href="./">Back to FAQ index</a>
 
 {% for faq in site.faq %}
-  {% if faq.category == 'async' %}
+  {% if faq.path contains '_faq/async/' %}
     <a id="{{ faq.title | slugify }}"></a>
     <h2>{{ faq.question }}</h2>
     <div class="answer">{{ faq.content }}</div>

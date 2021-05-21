@@ -8,9 +8,9 @@ title: "Frequently Asked Questions: General"
 <a href="./">Back to FAQ index</a>
 
 {% for faq in site.faq %}
-  {% unless faq.category %}
+  {% if faq.path contains '_faq/general/' %}
     <a id="{{ faq.title | slugify }}"></a>
     <h2>{{ faq.question }}</h2>
     <div class="answer">{{ faq.content }}</div>
-  {% endunless %}
+  {% endif %}
 {% endfor %}

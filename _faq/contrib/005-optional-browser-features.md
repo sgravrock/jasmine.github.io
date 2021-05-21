@@ -1,6 +1,5 @@
 ---
 question: How do I work on a feature that depends on something that's missing from some supported browsers, like an async matcher or equality comparison for `Set`s?
-category: contributing
 ---
 
 We try to make all features of Jasmine available on all supported browsers and

@@ -1,6 +1,5 @@
 ---
 question: Which async style should I prefer, and why?
-category: async
 ---
 
 We've found that most developers have a much easier time writing error-free

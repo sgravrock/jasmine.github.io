@@ -1,6 +1,5 @@
 ---
 question: I need to assert something about the arguments passed to an async callback that happens before my spec is finished. What's the best way to do that?
-category: async
 ---
 
 Consider a `DataFetcher` class that fetches data, calls any registered
