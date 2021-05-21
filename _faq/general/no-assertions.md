@@ -12,6 +12,8 @@ enable that behavior by setting the `failSpecWithNoExpectations` option to
   (usually `spec/support/jasmine.json`).
 * If you're using a third party tool that wraps jasmine-core, check that tool's
   documentation for how to pass configuration options.
+* If you're using jasmine-core directly, add it to the object that you pass to
+  [Env#configure](/api/edge/Env.html#configure).
 
 Although Jasmine provides the `failSpecWithNoExpectations`, we don't recommend
 relying on it. All it ensures is that each spec has at least one assertion, not
