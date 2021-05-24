@@ -1,28 +1,29 @@
 General testing:
-https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
 DONE  How can I get Jasmine to fail tests with no assertions?
   	* Why not to rely on this
+    * https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
 DONE Why does Jasmine allow multiple assertion failures? How can I turn that off?
-https://github.com/jasmine/jasmine/issues/666 (re-running env)
-"this" and arrow functions
+DONE: Should I use arrow or regular functions?
 What kinds of testing is Jasmine suited to? Not suited to?
 Why can't I treat a describe as an ordered sequence of steps?
   https://github.com/jasmine/jasmine-npm/issues/178
+https://github.com/jasmine/jasmine/issues/666 (re-running env)
 
 async:
-https://github.com/jasmine/jasmine/issues/1774
 DONE: Why are errors sometimes associated with the suite or "wrong" spec?
   https://github.com/jasmine/jasmine/issues/781 (late async errors. me!)
+DONE: Which async style should I prefer? Why?
+DONE: Something about putting assertions in a callback
 How do I test e.g. UI that awaits?
 Why can't I mix promises and callbacks?
   https://github.com/jasmine/jasmine/issues/1731
-DONE: Which async style should I prefer? Why?
-DONE: Something about putting assertions in a callback
+https://github.com/jasmine/jasmine/issues/1774
 
 spies:
 DONE: https://github.com/jasmine/jasmine/issues/1590, https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
+DONE: ajax/fetch/axios/whatever
+DONE: https://github.com/jasmine/jasmine/issues/1648 (spy returning rejected promise: async/return-reject.md)
 module mocking
-ajax/fetch/axios/whatever
 
 
 async describe:
@@ -63,7 +64,7 @@ IE:
 		* https://github.com/angular/angular/issues/41840
 		* https://github.com/mui-org/material-ui/issues/14420
 		* Babel
-	* How do I test functionality that depends on optional browser features?
+	DONE: * How do I test functionality that depends on optional browser features?
 
 Questions we wish were frequently asked:
 	* How can I get a quicker response to my issue?
@@ -78,6 +79,3 @@ Maybe skip:
 https://github.com/jasmine/jasmine-py/issues/52 (why isn't Python 2.x supported)
 https://github.com/jasmine/jasmine/issues/153
 https://github.com/jasmine/jasmine/issues/526
-
-Done:
-https://github.com/jasmine/jasmine/issues/1648 (spy returning rejected promise: async/return-reject.md)
