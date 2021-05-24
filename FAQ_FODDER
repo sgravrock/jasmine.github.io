@@ -1,4 +1,5 @@
 Infra & CSS:
+* Fix width of warning boxes in FAQs (e.g. _faq/contrib/005-why-ie.md)
 * Fix tables (currently broken on tutorials)
 * Fix links to & within FAQs
 * Link to the FAQs from the main docs page
@@ -65,7 +66,7 @@ Typescript?
 
 IE:
 	DONE: * Why won't my code work in IE? How do I fix it?
-	* Why do I have to deal with this?
+	DONE: * Why do I have to deal with this?
 		* Market share
 		* https://github.com/angular/angular/issues/41840
 		* https://github.com/mui-org/material-ui/issues/14420
