@@ -40,8 +40,8 @@ it('is async but signals completion too early', function(done) {
 In both cases, the spec signals that it's done but continues executing, later
 causing an error. By the time the error occurs, Jasmine has already reported
 that the spec passed and started executing the next spec. In the worst case,
-it's posssible that Jasmine might exit before the error occurs. If that happens,
-it might not be reported at all.
+Jasmine might exit before the error occurs. If that happens, it won't be
+reported at all.
 
 The fix is to make sure that the spec doesn't signal completion until it's
 really done. This can be done with callbacks:
