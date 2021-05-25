@@ -1,5 +1,5 @@
 ---
-question: I need to assert something about the arguments passed to an async callback that happens before my spec is finished. What's the best way to do that?
+question: I need to assert something about the arguments passed to an async callback that happens before the code under test is finished. What's the best way to do that?
 ---
 
 Consider a `DataFetcher` class that fetches data, calls any registered
@@ -22,7 +22,7 @@ it("calls the onData callback with the expected args", async function() {
 });
 ```
 
-Or more concisely, using a spy:
+Or using a spy to get better failure messages:
 
 ```javascript
 it("calls the onData callback with the expected args", async function() {

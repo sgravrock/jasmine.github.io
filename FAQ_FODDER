@@ -5,6 +5,7 @@ Infra & CSS:
 * Link to the FAQs from the main docs page
 * Better TOC
 * Try to upgrade docco to something that understands jsx
+* Check TODOs in all FAQs
 
 General testing:
 DONE  How can I get Jasmine to fail tests with no assertions?
