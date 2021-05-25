@@ -4,6 +4,7 @@ Infra & CSS:
 * Fix links to & within FAQs
 * Link to the FAQs from the main docs page
 * Better TOC
+* Try to upgrade docco to something that understands jsx
 
 General testing:
 DONE  How can I get Jasmine to fail tests with no assertions?
@@ -21,7 +22,7 @@ DONE: Why are errors sometimes associated with the suite or "wrong" spec?
   https://github.com/jasmine/jasmine/issues/781 (late async errors. me!)
 DONE: Which async style should I prefer? Why?
 DONE: Something about putting assertions in a callback
-How do I test e.g. UI that awaits?
+DONE: How do I test e.g. UI that awaits?
 Why can't I mix promises and callbacks?
   https://github.com/jasmine/jasmine/issues/1731
 https://github.com/jasmine/jasmine/issues/1774
