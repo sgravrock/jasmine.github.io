@@ -1,6 +1,5 @@
 Infra & CSS:
 * Fix width of warning boxes in FAQs (e.g. _faq/contrib/005-why-ie.md)
-* Fix tables (currently broken on tutorials)
 * Fix links to & within FAQs
 * Link to the FAQs from the main docs page
 * Better TOC

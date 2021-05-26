@@ -274,11 +274,17 @@ table {
   }
 }
 
-// Remove borders and spacing, overriding the above, if the table is for layout.
-// TODO: This causes weird scrolling effects
-table.layout {
-  td, th { 
+
+// Restore docco styles for cells that are actually docco's, overriding the 
+// above.
+table {
+  td.docs, th.doc {
     border: 0;
-    padding: 0;
+    padding: 10px 25px 1px 50px;
+  }
+
+  td.code, th.code {
+    border: 0;
+    padding: 14px 15px 16px 25px;
   }
 }
