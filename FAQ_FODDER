@@ -1,6 +1,9 @@
 Infra & CSS:
+* Fix margins between FAQs
 * Fix width of warning boxes in FAQs (e.g. _faq/contrib/005-why-ie.md)
+* Fix h3 styles in FAQs so they don't look like FAQ titles
 * Fix links to & within FAQs
+  * Incl. making sure self-links in headings work
 * Link to the FAQs from the main docs page
 * Better TOC
 * Try to upgrade docco to something that understands jsx
@@ -23,9 +26,9 @@ DONE: Why are errors sometimes associated with the suite or "wrong" spec?
 DONE: Which async style should I prefer? Why?
 DONE: Something about putting assertions in a callback
 DONE: How do I test e.g. UI that awaits?
-Why can't I mix promises and callbacks?
+DONE: Why can't I mix promises and callbacks?
   https://github.com/jasmine/jasmine/issues/1731
-https://github.com/jasmine/jasmine/issues/1774
+  https://github.com/jasmine/jasmine/issues/1774
 
 spies:
 DONE: https://github.com/jasmine/jasmine/issues/1590, https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
