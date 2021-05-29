@@ -2,7 +2,7 @@
 question: How can I get Jasmine to fail specs that don't have any assertions?
 ---
 
-By default, Jasmine doesn't require specs to contain any assertions. You can
+By default, Jasmine doesn't require specs to contain any expectations. You can
 enable that behavior by setting the `failSpecWithNoExpectations` option to
 `true`:
 
@@ -15,8 +15,8 @@ enable that behavior by setting the `failSpecWithNoExpectations` option to
 * If you're using jasmine-core directly, add it to the object that you pass to
   [Env#configure](/api/edge/Env.html#configure).
 
-Although Jasmine provides the `failSpecWithNoExpectations`, we don't recommend
-relying on it. All it ensures is that each spec has at least one assertion, not
+Although the `failSpecWithNoExpectations` is available for you to use, we don't recommend
+relying on it. All it ensures is that each spec has at least one expectation, not
 that the spec will actually fail for the right reason if the behavior it's
 trying to verify doesn't work. The only way to be sure that a spec is actually
 correct is to try it both ways and see that it passes when the code under test
