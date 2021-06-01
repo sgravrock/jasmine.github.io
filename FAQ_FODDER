@@ -4,8 +4,8 @@ Infra & CSS:
 * Fix h3 styles in FAQs so they don't look like FAQ titles
 * Fix links to & within FAQs
   * Incl. making sure self-links in headings work
-* Link to the FAQs from the main docs page
-* Better TOC
+DONE: * Link to the FAQs from the main docs page
+* Better TOC (link to individual FAQs)
 * Try to upgrade docco to something that understands jsx
 * Check TODOs in all FAQs
 
