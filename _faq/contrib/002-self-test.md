@@ -11,7 +11,8 @@ the specs call functions on `jasmineUnderTest`.
 
 This has several advantages:
 
-* We get feedback on the design of Jasmine by using it to develop Jasmine.
+* Developers get feedback on the design of Jasmine by using it to develop
+  Jasmine.
 * Developers can choose whether to test against the last committed version of
   Jasmine (by doing nothing) or against the current code (by doing a build 
   first).
