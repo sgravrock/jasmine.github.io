@@ -1,5 +1,6 @@
 ---
 question: Which async style should I use, and why?
+slug: preferred-style
 ---
 
 We've found that most developers have a much easier time writing error-free

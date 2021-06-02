@@ -5,12 +5,20 @@ title: "Frequently Asked Questions: Contributing"
 
 <h1>Frequently Asked Questions: Contributing</h1>
 
-<a href="./">Back to FAQ index</a>
+<ol>
+{% for faq in site.faq %}
+  {% if faq.path contains '_faq/contrib/' %}
+    <li><a href="#{{faq.slug}}">{{ faq.question }}</a></li>
+  {% endif %}
+{% endfor %}
+</ol>
 
 {% for faq in site.faq %}
-  {% if faq.path contains '_faq/contrib' %}
-    <a id="{{ faq.title | slugify }}"></a>
-    <h2>{{ faq.question }}</h2>
+  {% if faq.path contains '_faq/contrib/' %}
+    <h2 id={{faq.slug}} data-anchor-id="{{faq.slug}}">{{ faq.question }}</h2>
     <div class="answer">{{ faq.content }}</div>
   {% endif %}
 {% endfor %}
+
+<a href="./">Back to FAQ index</a>
+

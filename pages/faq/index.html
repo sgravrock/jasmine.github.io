@@ -7,11 +7,56 @@ redirect_from: /pages/faq.html
 <h1>Frequently Asked Questions</h1>
 
 <ol>
-  <li><a href="general.html">General</a></li>
-  <li><a href="contributing.html">Contributing to Jasmine</a></li>
-  <li><a href="testing.html">Writing Specs</a></li>
-  <li><a href="async.html">Async Testing</a></li>
-  <li><a href="spies.html">Spies</a></li>
+  <li>
+    <a href="general.html">General</a>
+    <ol>
+    {% for faq in site.faq %}
+      {% if faq.path contains '_faq/general/' %}
+        <li><a href="general.html#{{faq.slug}}">{{ faq.question }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </li>
+  <li>
+    <a href="contributing.html">Contributing to Jasmine</a>
+    <ol>
+    {% for faq in site.faq %}
+      {% if faq.path contains '_faq/contrib/' %}
+        <li><a href="contributing.html#{{faq.slug}}">{{ faq.question }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </li>
+  <li>
+    <a href="testing.html">Writing Specs</a>
+    <ol>
+    {% for faq in site.faq %}
+      {% if faq.path contains '_faq/testing/' %}
+        <li><a href="testing.html#{{faq.slug}}">{{ faq.question }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </li>
+  <li>
+    <a href="async.html">Async Testing</a>
+    <ol>
+    {% for faq in site.faq %}
+      {% if faq.path contains '_faq/async/' %}
+        <li><a href="async.html#{{faq.slug}}">{{ faq.question }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </li>
+  <li>
+    <a href="spies.html">Spies</a>
+    <ol>
+    {% for faq in site.faq %}
+      {% if faq.path contains '_faq/spies/' %}
+        <li><a href="spies.html#{{faq.slug}}">{{ faq.question }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </li>
 </ol>
 
 <h3>Have a question we missed?</h3>

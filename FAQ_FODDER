@@ -1,10 +1,10 @@
 Infra & CSS:
 DONE: * Fix margins between FAQs
-* Fix width of warning boxes in FAQs (e.g. _faq/contrib/005-why-ie.md)
+DONE: * Fix width of warning boxes in FAQs (e.g. _faq/contrib/005-why-ie.md)
 * Fix links to & within FAQs
   * Incl. making sure self-links in headings work
 DONE: * Link to the FAQs from the main docs page
-* Better TOC (link to individual FAQs)
+DONE: * Better TOC (link to individual FAQs)
 * Try to upgrade docco to something that understands jsx
   DONE: * Or failing that, at least don't style jsx as errors
 * Check TODOs in all FAQs

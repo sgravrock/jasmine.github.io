@@ -1,5 +1,6 @@
 ---
 question: What does Jasmine use to test itself?
+slug: self-test
 ---
 
 Jasmine uses Jasmine to test Jasmine.
