@@ -4,8 +4,8 @@ question: How can I configure a spy to return a rejected promise without trigger
 
 Simply creating a rejected promise that never gets handled is enough to trigger
 an unhandled rejection event in Node and most browsers, even if you don't do
-anything with the promise.  Because unahndled rejections almost always mean
-that something went wrong, Jasmine turns them into failures.
+anything with the promise. Jasmine turns unhandled rejections into failures
+because they almost always mean that something unexpectedly went wrong.
 
 Consider this spec:
 
@@ -21,7 +21,7 @@ The spec creates a rejected promise. If everything works correctly, it'll be
 handled, ultimately by the async matcher. But if `doSomething` fails to call
 `foo` or fails to pass the rejection along, the browser or Node will trigger an
 unhandled promise rejection event. Jasmine will treat that as a failure of the
-suite or spec that is running at the time of the event.
+suite or spec that's running at the time of the event.
 
 One fix is to create the rejected promise only when the spy is actually called:
 
@@ -32,7 +32,7 @@ it('does not cause an unhandled promise rejection', async function() {
   await expectAsync(doSomething(foo)).toBeRejected();
 });
 ```
-You can automate this somewhat by using the
+You can make this a bit clearer by using the
 [rejectWith](/api/edge/SpyStrategy.html#rejectWith) spy strategy:
 
 ```javascript

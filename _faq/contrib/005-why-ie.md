@@ -9,6 +9,7 @@ IE certainly is an antique and it may have very low overall usage, but many
 large organizations still use it as their standard browser. Since Jasmine is
 heavily used by people who develop applications for large organizations, IE is
 potentially more important than its absolute usage numbers suggest. Also, we
-try not to drop support for browsers except in major releases of Jasmine. Since
-major releases are relatively infrequent, we sometimes have to carry support
-for a browser past the point where it might otherwise make sese to drop it.
+try not to drop support for browsers except in major releases of Jasmine.
+Jasmine's relatively infrequent major releases mean that we sometimes have to
+carry support for a browser past the point where it might otherwise make sense
+to drop it.

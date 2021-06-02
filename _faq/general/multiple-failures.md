@@ -11,8 +11,8 @@ If you want each spec to stop at the first expectation failure, you can set the
 `oneFailurePerSpec` option to `true`:
 
 * If you're using the `jasmine` NPM package, set
-  `"stopSpecOnExpectationFailure"` to `true` in your config file (usually 
-  spec/support/jasmine.json`), or use the `--stop-on-failure=true` command line
+  `stopSpecOnExpectationFailure` to `true` in your config file (usually 
+  `spec/support/jasmine.json`), or use the `--stop-on-failure=true` command line
   option.
 * If you're using a third party tool that wraps jasmine-core, check that tool's
   documentation for how to pass configuration options.

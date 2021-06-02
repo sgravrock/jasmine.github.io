@@ -2,7 +2,7 @@
 question: How can I mock AJAX calls?
 ---
 
-If you're using `XMLHttpRequest`, or any library that uses it under the hood,
+If you're using `XMLHttpRequest` or any library that uses it under the hood,
 [jasmine-ajax](https://github.com/jasmine/jasmine-ajax) is a good choice. It
 takes care of the sometimes intricate details of mocking `XMLHttpRequest` and
 provides a nice API for verifying requests and stubbing responses.
