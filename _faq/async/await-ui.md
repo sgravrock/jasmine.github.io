@@ -83,9 +83,9 @@ the expected component is not rendered. But it's more resilient in the face of
 change. It will still pass if more `await`s or `.then()` calls are added to the
 code under test.
 
-If you write specs in this second style, you might find
+You might find
 [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/intro)
 or
 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-useful. The `findBy*` and `findAllBy*` queries in both those libraries 
-implement the polling behavior shown above.
+helpful when writing specs in the second style. The `findBy*` and `findAllBy*`
+queries in both those libraries implement the polling behavior shown above.

@@ -1,5 +1,5 @@
 ---
-question: Which async style should I prefer, and why?
+question: Which async style should I use, and why?
 ---
 
 We've found that most developers have a much easier time writing error-free
@@ -25,12 +25,12 @@ it('sometimes fails to finish', function(done) {
 
 If `result.things` is undefined, the access to `result.things.length` will throw
 an error, preventing `done` from being called. The spec will eventually time out
-but only after a significant delay. The error will be reported, but because of
+but only after a significant delay. The error will be reported. But because of
 the way browsers and Node expose information about unhandled exceptions, it 
 won't include a stack trace or any other information that indicates the source
 of the error.
 
-Fixing this requires wrapping each callback in a try-catch:
+Fixing that requires wrapping each callback in a try-catch:
 
 ```javascript
 it('finishes and reports errors reliably', function(done) {
@@ -53,6 +53,8 @@ convert the callback to a promise:
 ```javascript
 it('finishes and reports errors reliably', async function() {
   const result = await new Promise(function(resolve, reject) {
+    // If an exception is thrown from here, it will be caught by the Promise
+    // constructor and turned into a rejection.
     doSomethingAsync(resolve);
   });
 

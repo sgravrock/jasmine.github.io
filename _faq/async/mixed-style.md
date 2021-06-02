@@ -15,7 +15,7 @@ Either they're using `async` just to be able to `await` and not to signal
 completion to Jasmine, or they're trying to test code that mixes multiple 
 async styles.
 
-### The first scenario: when a spec is `async` just so it can `await`
+#### The first scenario: when a spec is `async` just so it can `await`
 
 ```javascript
 // WARNING: does not work correctly
@@ -71,7 +71,7 @@ it('does something', async function(/* Note: no done param */) {
 ```
 
 
-### The second scenario: Code that signals completion in multiple ways
+#### The second scenario: Code that signals completion in multiple ways
 
 ```javascript
 // in DataLoader.js
