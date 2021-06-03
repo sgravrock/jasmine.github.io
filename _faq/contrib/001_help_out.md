@@ -1,5 +1,5 @@
 ---
-question: I want to help out with Jasmine, where should I start?
+question: I want to help out with Jasmine. Where should I start?
 slug: help-out
 ---
 
