@@ -1,74 +1,29 @@
 Infra & CSS:
-DONE: * Fix margins between FAQs
-DONE: * Fix width of warning boxes in FAQs (e.g. _faq/contrib/005-why-ie.md)
 * Fix links to & within FAQs
   * Incl. making sure self-links in headings work
-DONE: * Link to the FAQs from the main docs page
-DONE: * Better TOC (link to individual FAQs)
 * Try to upgrade docco to something that understands jsx
   DONE: * Or failing that, at least don't style jsx as errors
 * Check TODOs in all FAQs
 * Figure out why some anchorjs links (e.g. Why does Jasmine allow multiple expectation failures in a spec? How can I disable that?) add a new line and others don't
-* Add a redundant "Back to FAQ index" link to the bottom of each page
 * Either support `code` in FAQ titles or remove it
 
 
 * Consider whether _faq/contrib/003-es5.md  is too defensive
 * Review & rewrite "It’s not possible to write a reliable spec for code that has that problem. If you can’t figure out when it’s finished, then neither can Jasmine."
 
-General testing:
-DONE  How can I get Jasmine to fail tests with no assertions?
-  	* Why not to rely on this
-    * https://github.com/jasmine/jasmine/issues/1467 (tests w/o assertions)
-DONE Why does Jasmine allow multiple assertion failures? How can I turn that off?
-DONE: Should I use arrow or regular functions?
-What kinds of testing is Jasmine suited to? Not suited to?
-Why can't I treat a describe as an ordered sequence of steps?
-  https://github.com/jasmine/jasmine-npm/issues/178
-https://github.com/jasmine/jasmine/issues/666 (re-running env)
-Can I/how can I use ES modules?
-
-async:
-DONE: Why are errors sometimes associated with the suite or "wrong" spec?
-  https://github.com/jasmine/jasmine/issues/781 (late async errors. me!)
-DONE: Which async style should I prefer? Why?
-DONE: Something about putting assertions in a callback
-DONE: How do I test e.g. UI that awaits?
-DONE: Why can't I mix promises and callbacks?
-  https://github.com/jasmine/jasmine/issues/1731
-  https://github.com/jasmine/jasmine/issues/1774
-
 spies:
-DONE: https://github.com/jasmine/jasmine/issues/1590, https://github.com/jasmine/jasmine/issues/1773 (.and.returnValue(Promise.reject()))
-DONE: ajax/fetch/axios/whatever
-DONE: https://github.com/jasmine/jasmine/issues/1648 (spy returning rejected promise: async/return-reject.md)
 module mocking
 
 
-async describe:
-https://github.com/jasmine/jasmine/issues/1734
-https://github.com/jasmine/jasmine/issues/1853
-https://github.com/jasmine/jasmine/issues/559
 
 
 test setup:
-DONE: let blocks https://github.com/jasmine/jasmine/issues/1451
 How to think about factoring out test setup
-
-versioning:
-https://github.com/jasmine/jasmine/issues/1617
-https://github.com/jasmine/jasmine-npm/issues/81 (why tie -npm to core)
-
-misc:
-http://web.archive.org/web/20131225024548/http://pivotallabs.com/jasmine-2-release/ (why is Jasmine called Jasmine)
 
 
 uncategorized:
 https://github.com/gburghardt/jasmine-data_driven_tests
 https://github.com/cedarbdd/cedar/issues/406 (don't mock what you don't own)
-
-Ember browser support policy:
-https://github.com/emberjs/rfcs/pull/685/files
 
 
 Typescript?
@@ -76,25 +31,28 @@ Typescript?
 	* babel & then type-check strategy (jasmine-browser)
 	* React approach already documented
 
-IE:
-	DONE: * Why won't my code work in IE? How do I fix it?
-	DONE: * Why do I have to deal with this?
-		* Market share
-		* https://github.com/angular/angular/issues/41840
-		* https://github.com/mui-org/material-ui/issues/14420
-		* Babel
-	DONE: * How do I test functionality that depends on optional browser features?
-
 Questions we wish were frequently asked:
 	* How can I get a quicker response to my issue?
 	* How can I get a quicker response to my PR?
-	DONE: * How does Jasmine use Jasmine to test Jasmine?
 
-* Why ES5?
-* Why not TypeScript?
 
 
 Maybe skip:
 https://github.com/jasmine/jasmine-py/issues/52 (why isn't Python 2.x supported)
 https://github.com/jasmine/jasmine/issues/153
 https://github.com/jasmine/jasmine/issues/526
+async describe:
+	https://github.com/jasmine/jasmine/issues/1734
+	https://github.com/jasmine/jasmine/issues/1853
+Ember browser support policy:
+	https://github.com/emberjs/rfcs/pull/685/files
+http://web.archive.org/web/20131225024548/http://pivotallabs.com/jasmine-2-release/ (why is Jasmine called Jasmine)
+versioning:
+	https://github.com/jasmine/jasmine/issues/1617
+	https://github.com/jasmine/jasmine-npm/issues/81 (why tie -npm to core)
+What kinds of testing is Jasmine suited to? Not suited to?
+Why can't I treat a describe as an ordered sequence of steps?
+  https://github.com/jasmine/jasmine-npm/issues/178
+https://github.com/jasmine/jasmine/issues/666 (re-running env)
+* Why ES5?
+* Why not TypeScript?
