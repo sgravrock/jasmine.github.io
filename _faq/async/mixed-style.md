@@ -1,5 +1,5 @@
 ---
-question: Why can't I write a spec that both takes a callback and returns a promise (or is an `async` function)? What should I do instead?
+question: Why can't I write a spec that both takes a callback and returns a promise (or is an async function)? What should I do instead?
 ---
 
 Jasmine needs to know, unambigously, when each asynchronous spec is done so 
