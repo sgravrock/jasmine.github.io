@@ -3,8 +3,9 @@ question: Why can't I write a spec that both takes a callback and returns a prom
 ---
 
 Jasmine needs to know, unambigously, when each asynchronous spec is done so 
-that it can move on to the next one at the right time. If a spec is an `async`
-function or otherwise returns a promise and also takes a `done` callback, it
+that it can move on to the next one at the right time. If a spec takes a `done`
+callback and also returns a promise, either explicitly or by using the `async`
+keyword, it
 in effect tells Jasmine "I'm done when I call the callback, and also I'm done
 when the returned promise is resolved". Those two things can't both be true,
 and Jasmine has no way of resolving the ambiguity. Future readers of the spec
@@ -30,7 +31,7 @@ it('does something', async function(done) {
 
 In this case the intent is for the spec to be done when the callback is called,
 and the promise that's implicitly returned from the spec is meaningless. The
-fix is to avoid returning a promise, either by wrapping the `async` function in
+fix is to avoid returning a promise by wrapping the `async` function in
 an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE):
 
 ```javascript
@@ -57,7 +58,7 @@ it('does something', function(done) {
 });
 ```
 
-or by promisifying the callback-based function:
+or to promisify the callback-based function:
 ```javascript
 it('does something', async function(/* Note: no done param */) {
   const something = await doSomethingAsync();
@@ -111,12 +112,11 @@ completion in two different ways: By settling (resolving or rejecting) the
 implicitly returned promise, and by calling the `done` callback. This mirrors
 a potential design problem with the `DataLoader` class. Usually people write
 specs like this because the code under test can't be relied upon to signal
-completion in a consistent way. For instance, `DataLoader` might only use the
-returned promise to signal failure, leaving it pending in the success case. Or
-the order in which subscribers are called and the returned promise is settled
-might be unpredictable. **It's not possible to write a reliable spec for
-code that has that problem.** If you can't figure out when it's finished, then
-neither can Jasmine.
+completion in a consistent way. The order in which subscribers are called and
+the returned promise is settled might be unpredictable. Or worse, `DataLoader`
+might only use the returned promise to signal failure, leaving it pending in
+the success case. It's not possible to write a reliable spec for code that has
+that problem.
 
 The fix is to change the code under test to always signal completion in a
 consistent way. In this case that means making sure that the last thing
@@ -141,4 +141,4 @@ it('provides the fetched data to observers', async function(/* Note: no done par
 });
 ```
 
-See also how to assert the arguments passed to an async callback that happens before the code under test is finished (TODO LINK).
+See also [how to assert the arguments passed to an async callback that happens before the code under test is finished](#callback-assertions).

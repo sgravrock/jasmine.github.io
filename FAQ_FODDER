@@ -6,7 +6,6 @@ Infra & CSS:
 
 
 * Consider whether _faq/contrib/003-es5.md  is too defensive
-* Review & rewrite "It’s not possible to write a reliable spec for code that has that problem. If you can’t figure out when it’s finished, then neither can Jasmine."
 
 spies:
 module mocking
