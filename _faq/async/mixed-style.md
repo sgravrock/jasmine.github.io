@@ -2,14 +2,13 @@
 question: Why can't I write a spec that both takes a callback and returns a promise (or is an async function)? What should I do instead?
 ---
 
-Jasmine needs to know, unambigously, when each asynchronous spec is done so 
-that it can move on to the next one at the right time. If a spec takes a `done`
-callback and also returns a promise, either explicitly or by using the `async`
-keyword, it
+Jasmine needs to know, when each asynchronous spec is done so that it can move
+on to the next one at the right time. If a spec takes a `done` callback and
+also returns a promise, either explicitly or by using the `async` keyword, it
 in effect tells Jasmine "I'm done when I call the callback, and also I'm done
 when the returned promise is resolved". Those two things can't both be true,
 and Jasmine has no way of resolving the ambiguity. Future readers of the spec
-are likely to have the same problem.
+are also likely to have trouble understanding the intent of the spec.
 
 Usually people who ask this question are dealing with one of two situations.
 Either they're using `async` just to be able to `await` and not to signal
