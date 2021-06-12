@@ -77,7 +77,7 @@ describe('When data is fetched', () => {
 });
 ```
 
-This is a bit more complex ast firstand can be slightly less efficient. It will
+This is a bit more complex at first and can be slightly less efficient. It will
 also time out (after 5 seconds by default) rather than failing immediately if
 the expected component is not rendered. But it's more resilient in the face of
 change. It will still pass if more `await`s or `.then()` calls are added to the

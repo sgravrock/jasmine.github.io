@@ -54,7 +54,7 @@ convert the callback to a promise:
 it('finishes and reports errors reliably', async function() {
   const result = await new Promise(function(resolve, reject) {
     // If an exception is thrown from here, it will be caught by the Promise
-    // constructor and turned into a rejection.
+    // constructor and turned into a rejection, which will fail the spec.
     doSomethingAsync(resolve);
   });
 
@@ -65,5 +65,5 @@ it('finishes and reports errors reliably', async function() {
 Callback-style specs are still useful in some situations. Some callback-based
 interfaces are difficult to promisify or don't benefit much from being
 promisified. And some people still run specs in older browsers that don't
-provide promises, such as Internet Explorer.  But in most cases it's easier to
+provide promises, such as Internet Explorer. But in most cases it's easier to
 write a reliable spec using `async`/`await` or at least promises.
