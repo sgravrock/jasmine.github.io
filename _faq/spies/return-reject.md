@@ -41,5 +41,4 @@ it('does not cause an unhandled promise rejection', async function() {
     .and.rejectWith(new Error('nope'));
   await expectAsync(doSomething(foo)).toBeRejected();
 });
-
 ```

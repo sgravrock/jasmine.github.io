@@ -1,6 +1,7 @@
 Infra & CSS:
 * Fix links to & within FAQs
   * Incl. making sure self-links in headings work
+  * Make absolute links relative
 * Check TODOs in all FAQs
 * Figure out why some anchorjs links (e.g. Why does Jasmine allow multiple expectation failures in a spec? How can I disable that?) add a new line and others don't
 
