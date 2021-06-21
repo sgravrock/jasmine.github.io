@@ -60,7 +60,7 @@ it('signals completion at the right time', function(done) {
 ```
 
 But
-[it's easier to write reliable async specs using `async`/`await` or promises](#which-async-style-should-i-use-and-why),
+[it's easier to write reliable async specs using `async`/`await` or promises](#preferred-style),
 so we recommend that in most cases:
 
 ```javascript
