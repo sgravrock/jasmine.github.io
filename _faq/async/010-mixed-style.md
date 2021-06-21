@@ -6,9 +6,9 @@ Jasmine needs to know when each asynchronous spec is done so that it can move
 on to the next one at the right time. If a spec takes a `done` callback, that
 means "I'm done when I call the callback". If a spec returns a promise, either
 explicitly or by using the `async` keyword, it means "I'm done when the
-returned promise is settled". Those two things can't both be true, and Jasmine
-has no way of resolving the ambiguity. Future readers of the spec are also
-likely to have trouble understanding the intent of the spec.
+returned promise is resolved or rejected". Those two things can't both be
+true, and Jasmine has no way of resolving the ambiguity. Future readers are
+also likely to have trouble understanding the intent of the spec.
 
 Usually people who ask this question are dealing with one of two situations.
 Either they're using `async` just to be able to `await` and not to signal
@@ -119,8 +119,8 @@ that problem.
 
 The fix is to change the code under test to always signal completion in a
 consistent way. In this case that means making sure that the last thing
-`DataLoader` does, in both success and failure cases, is settle the returned
-promise. Then it can be reliably tested like this:
+`DataLoader` does, in both success and failure cases, is resolve or reject the
+returned promise. Then it can be reliably tested like this:
 
 ```javascript
 it('provides the fetched data to observers', async function(/* Note: no done param */) {

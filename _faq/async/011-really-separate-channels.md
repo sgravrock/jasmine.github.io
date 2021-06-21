@@ -3,7 +3,7 @@ question: But I really have to test code that signals success and failure throug
 ---
 
 You can convert both sides to promises, if they aren't already promises. Then
-use `Promise.race` to wait for whichever one settles first:
+use `Promise.race` to wait for whichever one is resolved or rejected first:
 
 ```javascript
 // in DataLoader.js
