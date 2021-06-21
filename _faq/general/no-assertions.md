@@ -22,5 +22,5 @@ trying to verify doesn't work. The only way to be sure that a spec is actually
 correct is to try it both ways and see that it passes when the code under test
 is working and fails in the intended way when the code under test is broken.
 Very few people can consistently write good specs without doing that, just like
-very few people can consistently deliver working non-spec code without trying
+very few people can consistently deliver working non-test code without trying
 it out.

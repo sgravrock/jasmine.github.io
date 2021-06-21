@@ -22,7 +22,7 @@ it("calls the onData callback with the expected args", async function() {
 });
 ```
 
-Or using a spy to get better failure messages:
+You can also get better failure messages by using a spy:
 
 ```javascript
 it("calls the onData callback with the expected args", async function() {
@@ -69,4 +69,4 @@ it("calls the onData callback with the expected args", function(done) {
 
 In that version, the spec signals completion before the code under test
 actually finishes running. That can cause the spec's execution to interleave
-with other specs, which can lead to (TODO hyperlink) misrouted errors and other problems.
+with other specs, which can lead to [misrouted errors and other problems](#late-failures).

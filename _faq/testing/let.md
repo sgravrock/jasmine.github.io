@@ -45,19 +45,18 @@ describe('When the user is logged in', function() {
 });
 ```
 
-That doens't work, in part because the inner `beforeEach` functions run after
+That doesn't work, in part because the inner `beforeEach` functions run after
 the user is already logged in. Some test frameworks provide a way to re-order
 the test setup so that parts of the setup in an inner `describe` can run before
 parts of the setup in an outer `describe`. RSpec's `let` blocks are an example
 of this. Jasmine doesn't provide such functionality. We've learned through
 experience that having the setup flow control bounce back and forth between
-inner and outer `describes` leads to suites that are difficult to understand
-and difficult to modify, especially for someone other than the original author.
-Instead, we recommend refactoring the setup code so that each part happens
-after all of the setup that it depends on. Usually this means taking the
-contents of an outer `beforeEach` and inlining it into the inner specs or
-`beforeEach`es. If this leads to excessive code duplication, that can be
-handled with regular functions, just like in non-test code:
+inner and outer `describes` leads to suites that are hard to understand
+and hard to modify. Instead, try refactoring the setup code so that each part 
+happens after all of the setup that it depends on. Usually this means taking 
+the contents of an outer `beforeEach` and inlining it into the inner specs or
+`beforeEach`es. If this leads to excessive code duplication, that can be handled
+ with regular functions, just like in non-test code:
 
 ```javascript
 describe('When the user is logged in', function() {

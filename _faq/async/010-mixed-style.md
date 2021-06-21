@@ -22,7 +22,7 @@ async styles.
 it('does something', async function(done) {
   const something = await doSomethingAsync();
   doSomethingElseAsync(something, function(result) {
-    // ... probably some expectations here
+    expect(result).toBe(/*...*/);
     done();
   });
 });
@@ -30,7 +30,21 @@ it('does something', async function(done) {
 
 In this case the intent is for the spec to be done when the callback is called,
 and the promise that's implicitly returned from the spec is meaningless. The
-fix is to avoid returning a promise by wrapping the `async` function in
+best fix is to promisify the callback-based function and `await` the promise:
+
+```javascript
+it('does something', async function(/* Note: no done param */) {
+  const something = await doSomethingAsync();
+  const result = await new Promise(function(resolve, reject) {
+    doSomethingElseAsync(something, function(r) {
+      resolve(r);
+    });
+  });
+  expect(result).toBe(/*...*/);
+});
+```
+
+If you want to stick with callbacks, you can wrap the `async` function in
 an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE):
 
 ```javascript
@@ -38,14 +52,14 @@ it('does something', function(done) {
   (async function () {
     const something = await doSomethingAsync();
     doSomethingElseAsync(something, function(result) {
-      expect(result).toBe(170);
+      expect(result).toBe(/*...*/);
       done();
     });
   })();
 });
 ```
 
-or by replacing `await` with `then`:
+or replace `await` with `then`:
 ```javascript
 it('does something', function(done) {
   doSomethingAsync().then(function(something) {
@@ -57,18 +71,6 @@ it('does something', function(done) {
 });
 ```
 
-or to promisify the callback-based function:
-```javascript
-it('does something', async function(/* Note: no done param */) {
-  const something = await doSomethingAsync();
-  const result = await new Promise(function(resolve, reject) {
-    doSomethingElseAsync(something, function(r) {
-      resolve(r);
-    });
-  });
-  // ... probably some expectations here
-});
-```
 
 
 ### The second scenario: Code that signals completion in multiple ways
@@ -107,7 +109,7 @@ it('provides the fetched data to observers', async function(done) {
 ```
 
 Just like in the first scenario, the problem with this spec is that it signals
-completion in two different ways: By settling (resolving or rejecting) the
+completion in two different ways: by settling (resolving or rejecting) the
 implicitly returned promise, and by calling the `done` callback. This mirrors
 a potential design problem with the `DataLoader` class. Usually people write
 specs like this because the code under test can't be relied upon to signal

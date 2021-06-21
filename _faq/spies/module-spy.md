@@ -15,7 +15,7 @@ read-only, Jasmine can't replace it with a spy.
 There are two ways to work around the problem:
 
 1. Use dependency injection for things you'll want to mock, and inject a spy
-or a mock object from the spec. This approach usually leads to maintainability
+or a mock object from the spec. This approach usually results in maintainability
 improvements in the specs and the code under test. Needing to mock modules is
 often a sign of tightly coupled code, and it can be wise to fix the coupling
 rather than work around it with testing tools.
@@ -24,5 +24,5 @@ loader to make exported properties writeable. Doing this involves interacting
 with Node APIs that are currently marked as unstable, so it's a good idea to
 use a library that takes care of it for you. Examples include
 [testdouble](https://github.com/testdouble/testdouble.js/blob/main/docs/7-replacing-dependencies.md)
-and [rewire](https://github.com/testdouble/testdouble.js/blob/main/docs/7-replacing-dependencies.md). Be prepared for the possibility that things will break
-when you upgrade Node.
+and [rewire](https://www.npmjs.com/package/rewire). Be prepared for the 
+possibility that things will break when you upgrade Node.

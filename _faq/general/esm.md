@@ -12,5 +12,5 @@ Yes. The exact process depends on how you're using Jasmine:
 * If you're using the jasmine NPM package, you can load specs and helpers
   as ES modules by giving them names ending in `.mjs`. Opt-in support for
   loading `.js` files as ES modules is planned for version 3.8.
-* jasmine-browser-runner will also load script as ES modules 
+* jasmine-browser-runner will also load scripts as ES modules 
   if their names end in `.mjs`.
