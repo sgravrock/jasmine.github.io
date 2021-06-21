@@ -21,7 +21,7 @@ for examples of how to safely check whether an object is an instance of a type
 that might not exist.
 
 Users can provide their own Promise implementation via
-[Env#configure](/api/edge/Env.html#configure), regardless of whether the
+[Env#configure]({{ site.github.url }}/api/edge/Env.html#configure), regardless of whether the
 environment has built-in Promise support. If you're writing code that creates
 new promises, be sure to use the configured Promise constructor if there is
 one.

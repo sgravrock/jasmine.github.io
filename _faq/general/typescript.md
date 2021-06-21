@@ -6,7 +6,7 @@ There are two common ways to use Jasmine and TypeScript together.
 
 The first is to use `@babel/register` to compile TypeScript files to JavaScript 
 on the fly as they're imported. See
-[Testing a React app with Jasmine NPM](/tutorials/react_with_npm) for an
+[Testing a React app with Jasmine NPM]({{ site.github.url }}/tutorials/react_with_npm) for an
 example. This approach is easy to set up and provides the fastest possible
 edit-compile-run-specs cycle but does not provide type checking by default. You
 can add type checking by creating a separate TypeScript config file for your
