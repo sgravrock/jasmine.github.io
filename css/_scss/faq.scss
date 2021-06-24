@@ -8,14 +8,12 @@
     font-weight: bold;
   }
 
-  // Compensate for rocco not knowing JSX
-  .sr, .se, .err {
-    border: none;
-    color: #93a1a1 !important;
-  }
-
   .warning {
     // override width: 100% that makes the box too wide
     width: auto;
+  }
+
+  .highlighter-rouge .highlight {
+    @include light-code();
   }
 }

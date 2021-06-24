@@ -33,8 +33,7 @@
   }
 
   code.highlighter-rouge {
-    background-color: #f0f0f0;
-    font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+    @include light-code();
     padding: 1px 2px;
   }
 }
