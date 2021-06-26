@@ -30,7 +30,8 @@ it('does something', async function(done) {
 
 In this case the intent is for the spec to be done when the callback is called,
 and the promise that's implicitly returned from the spec is meaningless. The
-best fix is to promisify the callback-based function and `await` the promise:
+best fix is to change the callback-based function so that it returns a promise
+and then `await` the promise:
 
 ```javascript
 it('does something', async function(/* Note: no done param */) {
@@ -116,7 +117,7 @@ specs like this because the code under test can't be relied upon to signal
 completion in a consistent way. The order in which subscribers are called and
 the returned promise is settled might be unpredictable. Or worse, `DataLoader`
 might only use the returned promise to signal failure, leaving it pending in
-the success case. It's not possible to write a reliable spec for code that has
+the success case. It's difficult to write a reliable spec for code that has
 that problem.
 
 The fix is to change the code under test to always signal completion in a
