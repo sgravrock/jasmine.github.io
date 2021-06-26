@@ -32,7 +32,7 @@
     font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
   }
 
-  code.highlighter-rouge {
+  code, code.highlighter-rouge {
     @include light-code();
     padding: 1px 2px;
   }

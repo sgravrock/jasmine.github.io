@@ -1,4 +1,6 @@
 Infra & CSS:
+* Put Contributing last?
+* Improve readability of the question list. (Lose the underlines? More line height? Both?
 * Figure out why some anchorjs links (e.g. Why does Jasmine allow multiple expectation failures in a spec? How can I disable that?) add a new line and others don't
 
 

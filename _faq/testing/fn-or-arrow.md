@@ -1,5 +1,5 @@
 ---
-question: Should I pass regular functions or arrow functions to describe, it, beforeEach, etc?
+question: Should I pass regular functions or arrow functions to <code>describe</code>, <code>it</code>, <code>beforeEach</code>, etc?
 ---
 
 For `describe`, it doesn't matter. For `it`, `beforeEach`, and `afterEach`,
