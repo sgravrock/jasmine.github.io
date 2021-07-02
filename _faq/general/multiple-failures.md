@@ -10,6 +10,8 @@ change will make multiple expectations pass.
 If you want each spec to stop at the first expectation failure, you can set the
 `oneFailurePerSpec` option to `true`:
 
+* If you're using the standalone distribution, click "Options" and then "stop
+  spec on expectation failure", or edit `boot.js` to set the option permanently.
 * If you're using the `jasmine` NPM package, set
   `stopSpecOnExpectationFailure` to `true` in your config file (usually 
   `spec/support/jasmine.json`), or use the `--stop-on-failure=true` command line
