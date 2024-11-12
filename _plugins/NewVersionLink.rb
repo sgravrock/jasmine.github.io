@@ -3,24 +3,25 @@ module Jekyll
         def render(context)
             page = context.registers[:page]
             site = context.registers[:site]
+            baseurl = context.registers[:site].baseurl
 
             case page['collection']
             when 'api'
                 for_api_reference(page, '/api/', 'Jasmine',
-                    site.collections['api'])
+                    site.collections['api'], baseurl)
             when 'npm-api'
                 for_api_reference(page, '/api/npm/', 'Jasmine',
-                    site.collections['npm-api'])
+                    site.collections['npm-api'], baseurl)
             when 'browser-runner-api'
                 for_api_reference(page, '/api/browser-runner/',
                     'jasmine-browser-runner',
-                    site.collections['browser-runner-api'])
+                    site.collections['browser-runner-api'], baseurl)
             when 'archives'
-                for_archived_doc(page, site)
+                for_archived_doc(page, site, baseurl)
             end
         end
 
-        def for_api_reference(page, prefix, name, collection)
+        def for_api_reference(page, prefix, name, collection, baseurl)
             this_version = page['url'].sub(prefix, '').split('/').first
             latest = current_version(collection)
 
@@ -38,14 +39,14 @@ module Jekyll
                     including breaking changes, before the final
                     #{final} release.<br>
                     The current stable version of #{name} is
-                    <a href="#{prefix}#{latest}/#{page_name}">#{latest}</a>.
+                    <a href="#{baseurl}#{prefix}#{latest}/#{page_name}">#{latest}</a>.
                 END
             else
                 msg = <<~END
                     This page is for an older version of #{name}
                     (#{this_version}).<br/>
                     The current stable version of #{name} is:
-                    <a href="#{prefix}#{latest}/#{page_name}">#{latest}</a>.
+                    <a href="#{baseurl}#{prefix}#{latest}/#{page_name}">#{latest}</a>.
                     You can also look at the docs for the next release: <a href="#{prefix}edge/#{page_name}">Edge</a>
                 END
             end
@@ -57,7 +58,7 @@ module Jekyll
             END
         end
 
-        def for_archived_doc(page, site)
+        def for_archived_doc(page, site, baseurl)
             this_version = page['url'].sub(/^\/archives\//, '').split('/').first
             latest = current_version(site.collections['api'])
             <<~END
@@ -65,7 +66,7 @@ module Jekyll
                     This page is for an older version of Jasmine
                     (#{this_version})<br/>
                     The current stable version of Jasmine is:
-                    <a href="/api/#{latest}/global">#{latest}</a> -
+                    <a href="#{baseurl}/api/#{latest}/global">#{latest}</a> -
                     You can also look at the docs for the next release: <a href="/api/edge/global">Edge</a>
                 </div>
             END
