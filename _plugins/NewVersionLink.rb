@@ -1,11 +1,5 @@
 module Jekyll
     class NewVersionLink < Liquid::Tag
-#           def initialize(tag_name, text, tokens)
-#           puts "init"
-# #          super
-# #           @text = text
-#         end
-
         def render(context)
             page = context.registers[:page]
             site = context.registers[:site]
@@ -14,6 +8,9 @@ module Jekyll
             when 'api'
                 for_api_reference(page, '/api/', 'Jasmine',
                     site.collections['api'])
+            when 'npm-api'
+                for_api_reference(page, '/api/npm/', 'Jasmine',
+                    site.collections['npm-api'])
             when 'browser-runner-api'
                 for_api_reference(page, '/api/browser-runner/',
                     'jasmine-browser-runner',
