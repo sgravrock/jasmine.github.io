@@ -47,7 +47,8 @@ module Jekyll
                     (#{this_version}).<br/>
                     The current stable version of #{name} is:
                     <a href="#{baseurl}#{prefix}#{latest}/#{page_name}">#{latest}</a>.
-                    You can also look at the docs for the next release: <a href="#{prefix}edge/#{page_name}">Edge</a>
+                    You can also look at the docs for the next release:
+                    <a href="#{baseurl}#{prefix}edge/#{page_name}">Edge</a>
                 END
             end
 
