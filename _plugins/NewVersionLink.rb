@@ -23,9 +23,7 @@ module Jekyll
         def for_api_reference(page, prefix, name, collection)
             this_version = page['url'].sub(prefix, '').split('/').first
             latest = current_version(collection)
-            if page.url == '/api/npm/5.0.0-alpha.1/Jasmine' then
-                require 'pry'; binding.pry
-            end
+
             if this_version == 'edge' || this_version == latest
                 return
             end
@@ -58,14 +56,13 @@ module Jekyll
         def for_archived_doc(page, site)
             this_version = page['url'].sub(/^\/archives\//, '').split('/').first
             latest = current_version(site.collections['api'])
-            page_name = page['url'].split('/').last
             <<~END
                 <div class="warning">
                     This page is for an older version of Jasmine
                     (#{this_version})<br/>
                     The current stable version of Jasmine is:
-                    <a href="/api/#{latest}/#{page_name}">#{latest}</a> -
-                    You can also look at the docs for the next release: <a href="/api/edge/#{page_name}">Edge</a>
+                    <a href="/api/#{latest}/global">#{latest}</a> -
+                    You can also look at the docs for the next release: <a href="/api/edge/global">Edge</a>
                 </div>
             END
         end
