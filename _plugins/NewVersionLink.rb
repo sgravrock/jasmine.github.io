@@ -50,7 +50,11 @@ module Jekyll
                 END
             end
 
-            wrap(msg)
+            <<~END
+                <div class="main-content">
+                    <div class="warning">#{msg}</div>
+                </div>
+            END
         end
 
         def for_archived_doc(page, site)
@@ -63,15 +67,6 @@ module Jekyll
                     The current stable version of Jasmine is:
                     <a href="/api/#{latest}/global">#{latest}</a> -
                     You can also look at the docs for the next release: <a href="/api/edge/global">Edge</a>
-                </div>
-            END
-        end
-
-
-        def wrap(msg)
-            <<~END
-                <div class="main-content">
-                    <div class="warning">#{msg}</div>
                 </div>
             END
         end
