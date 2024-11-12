@@ -10,42 +10,48 @@ module Jekyll
             page = context.registers[:page]
             site = context.registers[:site]
 
-            if page['collection'] == 'api' then
-                for_api_reference(page, site)
-            elsif page['collection'] == 'archives' then
+            case page['collection']
+            when 'api'
+                for_api_reference(page, '/api/', 'Jasmine',
+                    site.collections['api'])
+            when 'browser-runner-api'
+                for_api_reference(page, '/api/browser-runner/',
+                    'jasmine-browser-runner',
+                    site.collections['browser-runner-api'])
+            when 'archives'
                 for_archived_doc(page, site)
-            else
-                "something else"
             end
         end
 
-        def for_api_reference(page, site)
-            this_version = page['url'].sub(/^\/api\//, '').split('/').first
-            latest = current_version(site.collections['api'])
+        def for_api_reference(page, prefix, name, collection)
+            this_version = page['url'].sub(prefix, '').split('/').first
+            latest = current_version(collection)
+            if page.url == '/api/npm/5.0.0-alpha.1/Jasmine' then
+                require 'pry'; binding.pry
+            end
             if this_version == 'edge' || this_version == latest
                 return
             end
 
             page_name = page['url'].split('/').last
-            is_prerelease = this_version.include?('-')
 
-            if is_prerelease
+            if is_prerelease(this_version)
                 final = this_version.sub(/-.*$/, '')
                 msg = <<~END
-                    This page describes a pre-release version of Jasmine
+                    This page describes a pre-release version of #{name}
                     (#{this_version}). There may be additional changes,
                     including breaking changes, before the final
                     #{final} release.<br>
-                    The current stable version of Jasmine is
-                    <a href="/api/#{latest}/#{page_name}">#{latest}</a>.
+                    The current stable version of #{name} is
+                    <a href="#{prefix}#{latest}/#{page_name}">#{latest}</a>.
                 END
             else
                 msg = <<~END
-                    This page is for an older version of Jasmine
+                    This page is for an older version of #{name}
                     (#{this_version}).<br/>
-                    The current stable version of Jasmine is:
-                    <a href="/api/#{latest}/#{page_name}">#{latest}</a>.
-                    You can also look at the docs for the next release: <a href="/api/edge/{{ pageName }}">Edge</a>
+                    The current stable version of #{name} is:
+                    <a href="#{prefix}#{latest}/#{page_name}">#{latest}</a>.
+                    You can also look at the docs for the next release: <a href="#{prefix}edge/#{page_name}">Edge</a>
                 END
             end
 
@@ -62,7 +68,7 @@ module Jekyll
                     (#{this_version})<br/>
                     The current stable version of Jasmine is:
                     <a href="/api/#{latest}/#{page_name}">#{latest}</a> -
-                    You can also look at the docs for the next release: <a href="/api/edge/{{ pageName }}">Edge</a>
+                    You can also look at the docs for the next release: <a href="/api/edge/#{page_name}">Edge</a>
                 </div>
             END
         end
@@ -77,18 +83,23 @@ module Jekyll
         end
 
         def current_version(collection)
-            collection.entries
+            latest = collection.entries
                 .filter_map { |entry|
                     elems = entry.split('/')
-                    if elems.length > 1 then
+                    if elems.length > 1 && !is_prerelease(elems[0]) then
                         begin
-                            Gem::Version.new(elems[0])
+                            [elems[0], Gem::Version.new(elems[0])]
                         rescue ArgumentError
                             # E.g. "edge". Ignore.
                         end
                     end
                 }
-                .max.to_s
+                .max_by { |s, v| v }
+            latest[0]
+        end
+
+        def is_prerelease(v)
+            v.include?('-')
         end
     end
 end
